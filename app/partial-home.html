@@ -1,0 +1,15 @@
+<div class="jumbotron text-center">
+    <h1>From the booth to the block</h1>
+</div>
+<h2>SONGS</h2>
+<ul>
+    <li ng-repeat="song in vm.songs">{{ song.artist   }}   : {{ song.title   }}</li>
+</ul>
+<h2>ARTICLES</h2>
+<ul>
+    <li ng-repeat="article in vm.articles">{{ article.preview }}</li>
+</ul>
+<h2>MIXTAPES</h2>
+<ul>
+    <li ng-repeat="mixtape in vm.mixtapes">{{ mixtape.preview }}</li>
+</ul>
