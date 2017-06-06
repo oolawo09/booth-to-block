@@ -18,10 +18,10 @@ angular.module("myApp")
        
 
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('about', {
-            url: '/about',
+        .state('bookings', {
+            url: '/bookings',
             views: {
-                '': { templateUrl: 'partial-about.html' },
+                '': { templateUrl: 'partial-bookings.html' },
                 'columnOne@about': { template: '' }
             }
 

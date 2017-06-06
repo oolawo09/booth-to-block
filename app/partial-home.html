@@ -1,15 +1,34 @@
-<div class="jumbotron text-center">
-    <h1>From the booth to the block</h1>
+<div class="card">
+    <img class="card-img-top" src="{{vm.mainArticle.img}}" alt="Card image cap">
+    <div class="card-block">
+        <h4 class="card-title">{{vm.mainArticle.title}}</h4>
+        <p class="card-text">{{vm.mainArticle.preview}}</p>
+        <a href="#" class="btn btn-primary">Read more</a>
+    </div>
 </div>
-<h2>SONGS</h2>
-<ul>
-    <li ng-repeat="song in vm.songs">{{ song.artist   }}   : {{ song.title   }}</li>
-</ul>
-<h2>ARTICLES</h2>
-<ul>
-    <li ng-repeat="article in vm.articles">{{ article.preview }}</li>
-</ul>
-<h2>MIXTAPES</h2>
-<ul>
-    <li ng-repeat="mixtape in vm.mixtapes">{{ mixtape.preview }}</li>
-</ul>
+<div class="card-group">
+    <div class="card">
+        <h4> latest songs</h4>
+        <div class="card-block" ng-repeat="song in vm.songs">
+            <img class="card-img-top" src="{{song.img}}" alt="Card image cap" height="100" width="100">
+            <p class="card-text"> {{song.title}}, {{song.artist}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 1 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <h4>latest articles</h4>
+        <img class="card-img-top" src="../img/diddy.jpg" alt="Card image cap" height="160" width="200">
+        <div class="card-block" ng-repeat="article in vm.articles">
+            <h4 class="card-title">Lorem ipsum</h4>
+            <p class="card-text">{{article.preview}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <h4>latest mixtapes</h4>
+        <div class="card-block" ng-repeat="mixtape in vm.mixtapes">
+            <img class="card-img-top" src="{{mixtape.img}}" alt="Card image cap" height="200" width="200">
+            <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+        </div>
+    </div>
+</div>
