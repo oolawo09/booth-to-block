@@ -29,13 +29,4 @@ angular.module("myApp")
             { artist: "Logic", title: "", img:"../img/logic.jpeg" }
         ]
     })
-    .controller("Bookings", function() { 
-    	var vm = this; 
-
-    	vm.bookingDetails = {} ; 
-
-
-    	vm.book = function(bookingDetails){ 
-    		
-    	}
-    })
+    

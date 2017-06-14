@@ -13,18 +13,7 @@ angular.module("myApp")
             templateUrl: 'partial-home.html',
             controllerAs: "vm", 
             controller: "HomeController"
-        })
+        })   
 
        
-
-        // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('bookings', {
-            url: '/bookings',
-            views: {
-                '': { templateUrl: 'partial-bookings.html' },
-                'columnOne@about': { template: '' }
-            }
-
-        });
-
     });
