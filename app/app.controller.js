@@ -18,8 +18,6 @@ angular.module("myApp")
             }
         );
 
-     
-
 
         ArticlesService.getArticles().then(
             function(data) {
