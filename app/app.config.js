@@ -10,7 +10,7 @@ angular.module("myApp")
         // HOME STATES AND NESTED VIEWS ========================================
             .state('home', {
             url: '/home',
-            templateUrl: 'partial-home.html',
+            templateUrl: 'home.html',
             controllerAs: "vm", 
             controller: "HomeController"
         })   
