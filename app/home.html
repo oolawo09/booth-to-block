@@ -1,0 +1,37 @@
+<div class="card">
+    <img class="card-img-top" src="{{vm.mainArticle.img}}" alt="Card image cap">
+    <div class="card-block">
+        <h4 class="card-title">{{vm.mainArticle.title}}</h4>
+        <p class="card-text">{{vm.mainArticle.preview}}</p>
+        <a href="#" class="btn btn-primary">Read more</a>
+    </div>
+</div>
+<div class="card-group">
+    <div class="card">
+        <h4 class="card-title"> latest songs</h4>
+        <div class="card-block" ng-repeat="song in vm.songs">
+            <a ui-sref="songs({songId : {{song.id}} })">
+                <img class="card-img-top" src="{{song.img}}" alt="Card image cap" height="100" width="100">
+            </a>
+            <p class="card-text"> {{song.title}}, {{song.artist}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 1 mins ago</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <h4 class="card-title">latest articles</h4>
+        <img class="card-img-top" src="../img/diddy.jpg" alt="Card image cap" height="160" width="200">
+        <div class="card-block" ng-repeat="article in vm.articles">
+            <h4 class="card-title">{{article.title}}</h4>
+            <p class="card-text">{{article.preview}}</p>
+            <a ui-sref="articles({articleId : {{article.id}} })">read more</a>
+            <p class="card-text"><small class="text-muted"> {{article.lastUpdated}}</small></p>
+        </div>
+    </div>
+    <div class="card">
+        <h4 class="card-title">latest mixtapes</h4>
+        <div class="card-block" ng-repeat="mixtape in vm.mixtapes">
+            <img class="card-img-top" src="{{mixtape.img}}" alt="Card image cap" height="200" width="200">
+            <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+        </div>
+    </div>
+</div>
