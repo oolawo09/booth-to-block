@@ -1,8 +1,6 @@
 <div>
     <h3>{{vm.song.title}}, {{vm.song.artist}}</h3>
-    <img src="{{vm.song.img}}">
-    <audio controls >
-        <source src="{{vm.song.url}}" type="audio/mpeg">
-    </audio>
+    <div ng-if="vm.song.url" style="height:400px;">
+        <iframe width="560" height="315" ng-src="{{vm.song.url}}" frameborder="0" allowfullscreen></iframe>
+    </div>
 </div>
-

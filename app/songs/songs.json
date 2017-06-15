@@ -3,20 +3,22 @@
     "id": "0",
     "artist": "Solange",
     "img": "songs/img/cranesInTheSky.jpeg",
-    "url": "songs/tracks/cranesInTheSky.mp3",
+    "url": "https://www.youtube.com/embed/S0qrinhNnOM",
     "lastUpdated": "1 hour ago"
 }, {
     "title": "bitch better have my money",
     "id": "1",
     "artist": "Rihanna",
     "img": "songs/img/bbhmm.jpeg",
-    "url": "songs/tracks/bbhmm.mp3",
+    "url": "https://www.youtube.com/embed/B3eAMGXFw1o",
     "lastUpdated": "2 hours ago"
 }, {
     "title": "anaconda",
     "id": "2",
     "artist": "Nikki Minaj",
     "img": "songs/img/anaconda.jpeg",
-    "url": "songs/tracks/anaconda.mp3",
+    "url": "https://www.youtube.com/embed/LDZX4ooRsWs",
     "lastUpdated": "5 hours ago"
 }]
+
+
