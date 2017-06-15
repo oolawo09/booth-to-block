@@ -14,7 +14,7 @@
                 <img class="card-img-top" src="{{song.img}}" alt="Card image cap" height="100" width="100">
             </a>
             <p class="card-text"> {{song.title}}, {{song.artist}}</p>
-            <p class="card-text"><small class="text-muted">Last updated 1 mins ago</small></p>
+            <p class="card-text"><small class="text-muted">{{song.lastUpdated}}</small></p>
         </div>
     </div>
     <div class="card">
@@ -30,8 +30,10 @@
     <div class="card">
         <h4 class="card-title">latest mixtapes</h4>
         <div class="card-block" ng-repeat="mixtape in vm.mixtapes">
-            <img class="card-img-top" src="{{mixtape.img}}" alt="Card image cap" height="200" width="200">
-            <p class="card-text"><small class="text-muted">Last updated 5 mins ago</small></p>
+            <a ui-sref="mixtapes({mixtapeId : {{mixtape.id}} })">
+                <img class="card-img-top" src="{{mixtape.img}}" alt="Card image cap" height="200" width="200">
+            </a>
+            <p class="card-text"><small class="text-muted">{{mixtape.lastUpdated}}</small></p>
         </div>
     </div>
 </div>

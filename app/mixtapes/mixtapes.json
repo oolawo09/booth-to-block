@@ -1,0 +1,24 @@
+[{
+    "title": "rejex",
+    "id": "0",
+    "artist": "Joey Badass",
+    "img": "mixtapes/img/joeyBadass.jpeg",
+    "url": "https://www.youtube.com/embed/WI92jrybHPo?list=PLddSkUxmPEC_jApDFNDre3pDAE8Ap1M74",
+    "lastUpdated": "1 hour ago"
+}, {
+    "title": "coloring book",
+    "id": "1",
+    "artist": "Chance the rapper",
+    "img": "mixtapes/img/chanceTheRapper.jpeg",
+    "url": "https://www.youtube.com/embed/lkIUnRRH6l4?list=PLP_7lFK9LbwfQKqSZUpWsRTiN8f6YYM5s",
+    "lastUpdated": "2 hours ago"
+}, {
+    "title": "Inception",
+    "id": "2",
+    "artist": "Logic",
+    "img": "mixtapes/img/logic.jpeg",
+    "url": "https://www.youtube.com/embed/Ci30mrniRRQ?list=PL9y_aRAKmsdtBN4Bag8rFx2Dqait6skY6",
+    "lastUpdated": "5 hours ago"
+}]
+
+

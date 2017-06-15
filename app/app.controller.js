@@ -1,7 +1,7 @@
 "use strict"
 
 angular.module("myApp")
-    .controller("HomeController", function(ArticlesService, SongsService) {
+    .controller("HomeController", function(ArticlesService, SongsService, MixtapesService) {
         var vm = this;
 
         vm.mainArticle = {
@@ -18,11 +18,7 @@ angular.module("myApp")
             }
         );
 
-        vm.songs = [
-            { artist: "Solange", title: "Cranes in the sky", img: "../img/cranesInTheSky.jpeg" },
-            { artist: "Nikki Minaj", title: "Anaconda", img: "../img/anaconda.jpeg" },
-            { artist: "Rihanna", title: "Bitch better have my money", img: "../img/bbhmm.jpeg" }
-        ]
+     
 
 
         ArticlesService.getArticles().then(
@@ -31,9 +27,11 @@ angular.module("myApp")
             }
         );
 
-        vm.mixtapes = [
-            { artist: "Joey Badass", title: "", img: "../img/joeyBadass.jpeg" },
-            { artist: "Chance the Rapper", title: "", img: "../img/chanceTheRapper.jpeg" },
-            { artist: "Logic", title: "", img: "../img/logic.jpeg" }
-        ]
+        MixtapesService.getMixtapes().then(
+            function(data) { 
+                vm.mixtapes = data.data; 
+            }
+        ); 
+
+        
     })

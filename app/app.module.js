@@ -5,5 +5,6 @@ angular.module("myApp", [
 	"about", 
 	"bookings", 
 	"articles", 
-	"songs"
+	"songs", 
+	"mixtapes"
 	]);
