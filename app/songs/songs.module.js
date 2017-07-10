@@ -1,3 +1,3 @@
 "use strict"; 
 
-angular.module("songs", ["angularSoundManager"]);
+angular.module("songs", []);
