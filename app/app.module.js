@@ -2,6 +2,7 @@
 
 angular.module("myApp", [
 	"ui.router", 
+	"ngMaterial",
 	"about", 
 	"bookings", 
 	"articles", 
