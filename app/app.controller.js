@@ -1,8 +1,10 @@
 "use strict"
 
 angular.module("myApp")
-    .controller("HomeController", function(ArticlesService, SongsService, MixtapesService) {
+    .controller("HomeController", function(ArticlesService, SongsService, MixtapesService, $scope) {
         var vm = this;
+
+
 
         vm.mainArticle = {
             img: "../img/Kendrick.jpg",
@@ -12,24 +14,30 @@ angular.module("myApp")
             content: ""
         }
 
-         SongsService.getSongs().then(
+        SongsService.getSongs().then(
             function(data) {
                 vm.songs = data.data;
             }
         );
 
 
+
         ArticlesService.getArticles().then(
             function(data) {
                 vm.articles = data.data;
+                vm.mainArticle = vm.articles[0]
             }
         );
 
-        MixtapesService.getMixtapes().then(
-            function(data) { 
-                vm.mixtapes = data.data; 
-            }
-        ); 
 
-        
+
+        MixtapesService.getMixtapes().then(
+            function(data) {
+                vm.mixtapes = data.data;
+            }
+        );
+
+        $scope.currentNavItem = 'page1';
+
+
     })

@@ -1,5 +1,9 @@
 <div>
     <h3>{{vm.article.title}}</h3>
     <img src="{{vm.article.img}}" align="right">
-    <div><p>{{vm.article.full}}</p>></div>
+    <div ng-repeat="paragraph in vm.article.full ">
+        <p class="card-text">{{paragraph}}</p>
+        </br>
+    </div>
+    <p class="card-text"><small class="text-muted"> {{vm.article.lastUpdated}}</small></p>
 </div>

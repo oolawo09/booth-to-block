@@ -11,9 +11,14 @@ angular.module("myApp")
             .state('home', {
             url: '/home',
             templateUrl: 'home.html',
-            controllerAs: "vm", 
+            controllerAs: "vm",
             controller: "HomeController"
-        })   
+        })
 
-       
+
+    })
+    .config(function($mdThemingProvider) {
+        $mdThemingProvider.theme("default")
+            .primaryPalette('pink')
+            .accentPalette('orange')
     });

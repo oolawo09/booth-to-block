@@ -1,1 +1,19 @@
 /* app css stylesheet */
+
+.navbar {
+  min-height: 40px;
+}
+
+.navbar-default {
+  background: transparent;
+  border: 0;
+  margin-bottom: 0;
+}
+
+.navbar-nav > li {
+  background: @white;
+
+  a{
+    padding: 10px;
+  }
+}
