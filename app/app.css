@@ -1,6 +1,5 @@
 /* app css stylesheet */
 
-
 .mixtape-banner {
     width: 100%;
     height: 500px;
@@ -11,60 +10,39 @@
     height: 500px;
 }
 
-.article-banner{ 
-	width: 50%;
-	height: 400px;
-	align: right;
- }
+.article-banner {
+    align: right;
+}
+
 
 /*black background, gold text theming*/
 
-.container {
-    background-color: black;
+.nav-link {
+    color: rgb(171, 158, 94);
 }
 
-html,
-body {
-    background-color: black;
-    height: 100%
-}
-
-.navbar-nav .nav-link {
+a:hover {
     color: white;
 }
 
-p {
-    color: rgb(171, 158, 94);
-    /*gold text*/
-}
-
-h3 {
-    color: rgb(171, 158, 94);
-}
-
-a {
+a:active {
     color: white;
 }
 
+.card-group {}
 
-
-.card-group {
-    background-color: black;
-}
-
-.card-title {
-    background-color: black;
-    color: rgb(171, 158, 94);
+.card-title .article-title {
     /*gold text*/
+    text-align: center;
 }
 
-.card-block {
-    background-color: black;
+.card-img-overlay {
+    text-align: bottom;
 }
 
-.card {
-    background-color: black;
-}
+.card-block {}
+
+.card {}
 
 .label {
     color: rgb(171, 158, 94);
@@ -74,10 +52,39 @@ a {
     color: rgb(171, 158, 94);
 }
 
-.submit{ 
-	color: rgb(171, 158, 94);
+.submit {
+    color: rgb(171, 158, 94);
+}
+
+
+.card-header {
+    color: rgb(171, 158, 94);
+}
+
+.card-footer {
+    color: rgb(171, 158, 94);
+}
+
+img {
+    padding-right: 10px;
+}
+
+.card-block {
+
+}
+
+.preview{ 
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(171, 158, 94);
  }
 
- .form{ 
-	background-color: white; 
+.card-header {
+    border-bottom: 1px solid;
+    border-bottom-color: rgb(171, 158, 94);
+}
+
+.card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 3;
   }
+}

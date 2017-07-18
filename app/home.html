@@ -1,38 +1,59 @@
-<div class="card">
-    <img  class="article-banner" aligh="right" src="{{vm.mainArticle.img}}" alt="Card image cap" >
-    <div class="card-block">
-        <h4 class="card-title">{{vm.mainArticle.title}}</h4>
-        <p class="card-text">{{vm.mainArticle.preview}}</p>
-        <a ui-sref="articles({articleId : vm.mainArticle.id })">read more</a>
+<div class="row">
+    <div class="card">
+        <img class="article-banner" src="{{vm.mainArticle.img}}" alt="Card image cap">
+        <div class="card-block preview">
+            <h4 class="card-title">{{vm.mainArticle.title}}</h4>
+            <p class="card-text">{{vm.mainArticle.preview}}</p>
+            <a ui-sref="articles({articleId : vm.mainArticle.id })">read more</a>
+        </div>
     </div>
 </div>
-<div class="card-group">
-    <div class="card">
-        <h4 class="card-title"> latest songs</h4>
-        <div class="card-block" ng-repeat="song in vm.songs">
-            <a ui-sref="songs({songId : {{song.id}} })">
-                <img class="card-img-top" src="{{song.img}}" alt="Card image cap" height="100" width="100">
-            </a>
-            <p class="card-text"> {{song.title}}, {{song.artist}}</p>
-            <p class="card-text"><small class="text-muted">{{song.lastUpdated}}</small></p>
+<div class="row">
+    <div class="col">
+        <div class="card ">
+            <div class="card-header">
+                <h4 class="card-title">TOP SONGS</h4>
+            </div>
+            <div class="card-block media preview" ng-repeat="song in vm.songs">
+                <a ui-sref="songs({songId : {{song.id}} })">
+                    <img class="d-flex align-self-start mr-3" src="{{song.img}}" alt="Card image cap" height="100" width="100">
+                </a>
+                <div class="media-body">
+                    <p class="mt-0">{{song.title}}</p>
+                    {{song.artist}}
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <h4 class="card-title">latest articles</h4>
-        <div class="card-block" ng-repeat="article in vm.articles">
-            <h4 class="card-title">{{article.title}}</h4>
-            <p class="card-text">{{article.preview}}</p>
-            <a ui-sref="articles({articleId : {{article.id}} })">read more</a>
-            <p class="card-text"><small class="text-muted"> {{article.lastUpdated}}</small></p>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">HOT NEWS</h4>
+            </div>
+            <div class="card-block preview" ng-repeat="article in vm.articles">
+                <p class="card-title">{{article.title}}</p>
+                <a ui-sref="articles({articleId : {{article.id}} })">
+                <img class="card-img-top" src="{{article.previewImg}}" alt="Card image cap" height="100" width="100">
+                </a>
+                <!--<p class="card-text">{{article.preview}}</p>-->
+                <a ui-sref="articles({articleId : {{article.id}} })">read more</a>
+                <p class="card-text"><small class="text-muted"> {{article.lastUpdated}}</small></p>
+            </div>
         </div>
     </div>
-    <div class="card">
-        <h4 class="card-title">latest mixtapes</h4>
-        <div class="card-block" ng-repeat="mixtape in vm.mixtapes">
-            <a ui-sref="mixtapes({mixtapeId : {{mixtape.id}} })">
-                <img class="card-img-top" src="{{mixtape.img}}" alt="Card image cap" height="200" width="200">
-            </a>
-            <p class="card-text"><small class="text-muted">{{mixtape.lastUpdated}}</small></p>
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">MIXTAPES</h4>
+            </div>
+            <div class="card-block preview" ng-repeat="mixtape in vm.mixtapes">
+                <a ui-sref="mixtapes({mixtapeId : {{mixtape.id}} })">
+                    <img class="card-img-top" src="{{mixtape.img}}" alt="Card image cap" height="200" width="200">
+                </a>
+                <p class="card-text">{{mixtape.title}}</p>
+                <p class="card-text">{{mixtape.artist}}</p>
+                <p class="card-text"><small class="text-muted">{{mixtape.lastUpdated}}</small></p>
+            </div>
         </div>
     </div>
 </div>
