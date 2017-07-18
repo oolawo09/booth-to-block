@@ -29,6 +29,7 @@ a:active {
     color: white;
 }
 
+
 .card-group {}
 
 .card-title .article-title {
@@ -56,7 +57,6 @@ a:active {
     color: rgb(171, 158, 94);
 }
 
-
 .card-header {
     color: rgb(171, 158, 94);
 }
@@ -69,22 +69,25 @@ img {
     padding-right: 10px;
 }
 
-.card-block {
+.card-block {}
 
-}
-
-.preview{ 
+.preview {
     border-bottom: 1px solid;
     border-bottom-color: rgb(171, 158, 94);
- }
+    color: rgb(171, 158, 94);
+}
 
 .card-header {
     border-bottom: 1px solid;
     border-bottom-color: rgb(171, 158, 94);
 }
 
+.about {
+    color: rgb(171, 158, 94);
+}
+
 .card-columns {
-  @include media-breakpoint-only(lg) {
-    column-count: 3;
-  }
+    @include media-breakpoint-only(lg) {
+        column-count: 3;
+    }
 }
