@@ -47,6 +47,7 @@ a:active {
 
 .label {
     color: rgb(171, 158, 94);
+    padding-left: 20px;
 }
 
 .form-control {
