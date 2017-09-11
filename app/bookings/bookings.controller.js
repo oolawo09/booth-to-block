@@ -1,14 +1,13 @@
 "use strict";
 
-angular.module("about")
-    .controller("Bookings", function($state) {
+angular.module("bookings")
+    .controller("BookingsController", function($state) {
         var vm = this;
 
         vm.bookingDetails = {};
 
 
         vm.book = function(bookingDetails) {
-        	console.log("here")
-        	$state.go("home")
+        	$state.go("payments")
         }
     })

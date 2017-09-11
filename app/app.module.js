@@ -7,5 +7,6 @@ angular.module("myApp", [
 	"bookings", 
 	"articles", 
 	"songs", 
-	"mixtapes"
+	"mixtapes", 
+	"payments"
 	]);
