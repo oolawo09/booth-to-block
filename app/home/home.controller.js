@@ -1,6 +1,6 @@
 "use strict"
 
-angular.module("myApp")
+angular.module("home")
     .controller("HomeController", function(ArticlesService, SongsService, MixtapesService, $scope) {
         var vm = this;
 

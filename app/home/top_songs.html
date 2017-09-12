@@ -1,0 +1,14 @@
+<div class="card ">
+    <div class="card-header">
+        <h4 class="card-title">TOP SONGS</h4>
+    </div>
+    <div class="card-block media preview" ng-repeat="song in vm.songs">
+        <a ui-sref="songs({songId : {{song.id}} })">
+                    <img class="d-flex align-self-start mr-3" src="{{song.img}}" alt="Card image cap" height="100" width="100">
+                </a>
+        <div class="media-body">
+            <p class="mt-0">{{song.title}}</p>
+            {{song.artist}}
+        </div>
+    </div>
+</div>

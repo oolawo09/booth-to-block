@@ -9,5 +9,10 @@ angular.module("myApp", [
 	"songs", 
 	"mixtapes", 
 	"payments", 
-	"blog"
+	"blog",
+	"userManagement", 
+	"adminLogin", 
+	"authentication",
+	"header",
+	"home"
 	]);

@@ -21,6 +21,7 @@ angular.module("blog")
         }
     });
 
+
 angular.module("blog")
     .factory('AuthenticationService', function() {
         var auth = {

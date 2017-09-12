@@ -1,0 +1,14 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">HOT NEWS</h4>
+    </div>
+    <div class="card-block preview" ng-repeat="article in vm.articles">
+        <p class="card-title">{{article.title}}</p>
+        <a ui-sref="article({articleId : {{article.id}} })">
+                    <img class="d-flex align-self-start mr-3" src="{{article.previewImg}}" alt="Card image cap" height="100" width="100">
+                </a>
+        <!--<p class="card-text">{{article.preview}}</p>-->
+        <a ui-sref="articles({articleId : {{article.id}} })">read more</a>
+        <p class="card-text"><small class="text-muted"> {{article.lastUpdated}}</small></p>
+    </div>
+</div>

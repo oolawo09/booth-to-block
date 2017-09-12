@@ -6,6 +6,8 @@ angular.module("blog")
 
 
         $stateProvider
+            
+
 
             // Blog pages ========================================
             .state("blog", {
@@ -21,4 +23,6 @@ angular.module("blog")
                 controllerAs: "vm",
                 controller: "PostController"
             });
+
+
     });

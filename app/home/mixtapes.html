@@ -1,0 +1,13 @@
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">MIXTAPES</h4>
+    </div>
+    <div class="card-block preview" ng-repeat="mixtape in vm.mixtapes">
+        <a ui-sref="mixtapes({mixtapeId : {{mixtape.id}} })">
+                    <img class="card-img-top" src="{{mixtape.img}}" alt="Card image cap" height="200" width="200">
+                </a>
+        <p class="card-text">{{mixtape.title}}</p>
+        <p class="card-text">{{mixtape.artist}}</p>
+        <p class="card-text"><small class="text-muted">{{mixtape.lastUpdated}}</small></p>
+    </div>
+</div>
