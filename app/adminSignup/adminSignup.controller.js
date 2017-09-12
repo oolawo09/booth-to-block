@@ -1,16 +1,17 @@
 "use strict";
 
-angular.module("adminLogin")
-    .controller("adminLoginController", function($stateParams, $window, $state, authenticationService, userManagementService) {
+angular.module("adminSignup")
+    .controller("adminSignupController", function($stateParams, $window, $state, authenticationService, userManagementService) {
         var vm = this;
 
         vm.user = {
             username: "",
-            password: ""
+            password: "", 
+            confirmPassword: ""
         }
 
-        vm.login = function(username, password) {
-            userManagementService.login(username, password)
+        vm.signup = function(username, password, confirmPassword) {
+            userManagementService.register(username, password, confirmPassword)
                 .success(function(data) {
                     authenticationService.isAuthenticated = true
                     console.log(data)

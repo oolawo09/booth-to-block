@@ -14,5 +14,6 @@ angular.module("myApp", [
 	"adminLogin", 
 	"authentication",
 	"header",
-	"home"
+	"home", 
+	"adminSignup"
 	]);

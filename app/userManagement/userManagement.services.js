@@ -13,6 +13,7 @@ angular.module("userManagement")
             },
 
             register: function(username, password, passwordConfirmation) {
+            	console.log("registering")
                 return $http.post(options.api.base_url + '/user/register', { username: username, password: password, passwordConfirmation: passwordConfirmation });
             }
         }
