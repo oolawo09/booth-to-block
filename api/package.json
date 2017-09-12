@@ -1,0 +1,18 @@
+{
+  "name": "block-to-booth",
+  "description": "block-to-booth api",
+  "version": "0.0.1",
+  "private": false,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "~1.0.2",
+    "express": "~4.1.1",
+    "express-jwt": "~0.2.1",
+    "feed": "^0.2.6",
+    "json": "0.0.14",
+    "jsonwebtoken": "~0.4.0",
+    "mongoose": "^4.11.11",
+    "morgan": "~1.0.1",
+    "redis": "~0.10.1"
+  }
+}
