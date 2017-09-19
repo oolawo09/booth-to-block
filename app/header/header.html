@@ -3,6 +3,20 @@
 <div ng-controller="headerController as vm">
     <nav class="navbar navbar-inverse bg-inverse">
         <div class="container">
+            <div ng-if="vm.isAdmin" class="user pull-right">
+                <md-menu md-offset="0 -7">
+                    <md-button class="btn btn-primary" ng-click="$mdOpenMenu($event)">
+                        {{vm.session.userName }}
+                    </md-button>
+                    <md-menu-content>
+                        <md-menu-item>
+                            <md-button ng-click="vm.logout()">
+                                Log Out
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
             <div class="navbar-brand">BLOCK TO BOOTH</div>
             <!--Links-->
             <ul class="nav navbar-nav">

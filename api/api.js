@@ -41,17 +41,20 @@ app.post('/post/like', routes.posts.like);
 //Unlike the post id
 app.post('/post/unlike', routes.posts.unlike);
 
+//comment 
+app.post('/post/comment', routes.posts.comment);
+
 //Get posts by tag
 app.get('/tag/:tagName', routes.posts.listByTag); 
 
 //Create a new post
-app.post('/post', jwt({secret: secret.secretToken}), tokenManager.verifyToken , routes.posts.create); 
+app.post('/post',  tokenManager.verifyToken , routes.posts.create); 
 
 //Edit the post id
-app.put('/post', jwt({secret: secret.secretToken}), tokenManager.verifyToken , routes.posts.update); 
+app.put('/post',  routes.posts.update); 
 
 //Delete the post id
-app.delete('/post/:id', jwt({secret: secret.secretToken}), tokenManager.verifyToken, routes.posts.delete); 
+app.delete('/post/:id', routes.posts.delete); 
 
 //Create a new user
 app.post('/user/register', routes.users.register); 
@@ -60,7 +63,7 @@ app.post('/user/register', routes.users.register);
 app.post('/user/signin', routes.users.signin); 
 
 //Logout
-app.get('/user/logout', jwt({secret: secret.secretToken}), routes.users.logout); 
+app.get('/user/logout', routes.users.logout); 
 
 //Serve the rss feed
 app.get('/rss', routes.rss.index);

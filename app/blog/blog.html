@@ -2,11 +2,13 @@
     <div class="card-header">
         <h4 class="card-title">BLOG POSTS</h4>
     </div>
-    <div class="card-block preview" ng-repeat="post in vm.posts">
-        <p class="card-title">{{post.title}}</p>
-        {{post.preview}}
+    <div ng-if="vm.isAdmin">
+        <button ng-click="vm.createPost()">create post</button>
+    </div>
+    <div class="card-block preview" ng-repeat="currentPost in vm.posts">
+        <p class="card-title">{{currentPost.title}}</p>
         <!--<p class="card-text">{{article.preview}}</p>-->
         </br>
-        <a ui-sref="post({postId : {{post.id}} })">read more</a>
+        <a ui-sref="post({postId : {{currentPost.id}} })">read more</a>
     </div>
 </div>

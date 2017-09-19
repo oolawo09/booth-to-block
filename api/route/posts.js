@@ -63,6 +63,8 @@ exports.read = function(req, res) {
 	});
 };
 
+
+
 exports.like = function(req, res) {
 	var id = req.body.id || '';
 	if (id == '') {
@@ -78,6 +80,24 @@ exports.like = function(req, res) {
 
 		return res.send(200);
 	});
+}
+
+exports.comment = function(req, res){ 
+	var id = req.body.id || '';
+	var comments = req.body.comments || ''; 
+	if (id == '' || comments == '') {
+		return res.send(400);
+	}
+
+	db.postModel.update({_id: id}, { comments:  comments}, function(err, nbRows, raw) {
+		if (err) {
+			console.log(err);
+			return res.send(400);
+		}
+
+		return res.send(200);
+	});
+
 }
 
 exports.unlike = function(req, res) {
@@ -101,6 +121,7 @@ exports.create = function(req, res) {
 
 
 	var post = req.body.post;
+	console.log(post)
 	if (post == null || post.title == null || post.content == null 
 		|| post.tags == null) {
 		return res.send(400);
@@ -123,8 +144,6 @@ exports.create = function(req, res) {
 }
 
 exports.update = function(req, res) {
-
-
 	var post = req.body.post;
 
 	if (post == null || post._id == null) {
@@ -161,10 +180,13 @@ exports.update = function(req, res) {
 	});
 };
 
+
+
 exports.delete = function(req, res) {
 
 
 	var id = req.params.id;
+	console.log("id: ", id)
 	if (id == null || id == '') {
 		res.send(400);
 	} 
@@ -210,3 +232,5 @@ exports.listByTag = function(req, res) {
   		return res.json(200, results);
 	});
 }
+
+

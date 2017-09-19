@@ -65,8 +65,10 @@ var Post = new Schema({
     created: { type: Date, default: Date.now },
     updated: { type: Date, default: Date.now },
     read: { type: Number, default: 0 },
-    likes: { type: Number, default: 0 }
+    likes: { type: Number, default: 0 },
+    comments: [ {type: String}]
 });
+
 
 var postModel = mongoose.model('Post', Post);
 var userModel = mongoose.model('User', User);

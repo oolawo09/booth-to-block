@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("adminLogin")
-    .controller("adminLoginController", function($stateParams, $window, $state, authenticationService, userManagementService) {
+    .controller("adminLoginController", function($stateParams, $window, $state, userManagementService, sessionService) {
         var vm = this;
 
         vm.user = {
@@ -12,10 +12,8 @@ angular.module("adminLogin")
         vm.login = function(username, password) {
             userManagementService.login(username, password)
                 .success(function(data) {
-                    authenticationService.isAuthenticated = true
-                    console.log(data)
-                    $window.sessionStorage.token = data.token;
-                    $state.go('admin')
+                    sessionService.initAdminSession(data); 
+                    $state.go('blog')
                 }).error(function(status, data) {
                     console.log(status);
                     console.log(data);

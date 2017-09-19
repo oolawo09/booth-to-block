@@ -1,9 +1,41 @@
 <div class="card">
     <div class="card-block">
-        <h3 class="card-title">{{vm.post.title}}</h3>
-        <div ng-repeat="paragraph in vm.post.full">
-            <p class="card-text">{{paragraph}}</p>
-            </br>
-        </div>
+        <section class="post">
+            <header class="post-header">
+                <div ng-if="vm.isAdmin">
+                    <a ui-sref="editPost({postId : {{vm.postId}} })">edit post</a>
+                </div>
+                <h2 class="post-title"><a href="#/post/{{post.id}}">{{vm.post.title}}</a></h2>
+                <div class="post-meta"><i class="fa fa-bullseye"></i> Posted on {{vm.post.created | date:'medium'}}</div>
+                <div class="post-meta"><i class="fa fa-thumbs-up"></i> {{vm.post.likes}}</div>
+                <div class="post-meta">
+                    <ul class="list-inline">
+                        <i class="fa fa-tags"></i>
+                        <li ng-repeat="tag in vm.post.tags">
+                            <a class="label label-success" href="#/tag/{{tag}}">{{tag}}</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <div class="post-content">
+                {{vm.post.content}}
+            </div>
+            <footer class="post-footer">
+                <button ng-click="vm.likePost()" class="btn btn-xs btn-success" ng-hide="vm.isAlreadyLiked">Like</button>
+                <button ng-click="vm.unlikePost()" class="btn btn-xs btn-success" ng-show=" vm.isAlreadyLiked ">Unlike</button>
+                {{vm.post.likes}} <i class="fa fa-thumbs-up"></i>
+                <div class="post-content" ng-repeat="comment in vm.post.comments">
+                    {{comment}}
+                </div>
+                <div class="form-group">
+                    <label for="textareaContent">Comment</label>
+                    <textarea class="form-control" rows="5" id="textareaContent" ng-model="vm.post.comment"></textarea>
+                    <button ng-click="vm.comment(vm.post)" class="btn btn-xs btn-success">Comment</button>
+                </div>
+                <div ng-if="vm.isAdmin">
+                    <button ng-click="vm.deletePost(vm.post._id)">delete post</button>
+                </div>
+            </footer>
+        </section>
     </div>
 </div>

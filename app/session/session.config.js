@@ -1,6 +1,6 @@
 "use strict";
 
-angular.module("authentication")
+angular.module("session")
     .config(function() {
 
     });
