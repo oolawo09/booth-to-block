@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var SALT_WORK_FACTOR = 10;
-var mongodbURL = 'mongodb://localhost/block-to-booth';
+var mongodbURL = 'mongodb://heroku_6f29w2wn:5jbjcnvtfatg4gr7p55s3c6b9@ds147274.mlab.com:47274/heroku_6f29w2wn';
 var mongodbOptions = { };
 
 mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
