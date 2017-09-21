@@ -8,6 +8,7 @@ angular.module("session")
             session.isAuthenticated = true;
             session.isAdmin = true;
             session.token = data.token;
+            session.username = data.username;
             $cookies.putObject("adminSession", session);
         }
 
@@ -18,7 +19,6 @@ angular.module("session")
         function isAdmin() {
             var session = {}
             session = $cookies.getObject("adminSession");
-            console.log(session)
             if (session == undefined) {
                 return false;
             } else {

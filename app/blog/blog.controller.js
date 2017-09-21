@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("blog")
-    .controller("BlogController", function(BlogService, sessionService, $state) {
+    .controller("BlogController", function(BlogService, sessionService, $state, $scope) {
         var vm = this;
         vm.posts = {};
         vm.isAdmin = sessionService.isAdmin();
@@ -17,6 +17,11 @@ angular.module("blog")
         vm.createPost = function() {
             $state.go("createPost")
         }
+
+        $scope.$on("loggedOut", function(event) {
+            vm.isAdmin = false;
+        })
+
     })
 
     .controller("PostController", function($stateParams, BlogService, LikeService, sessionService, $state) {

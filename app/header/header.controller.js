@@ -1,11 +1,18 @@
-"use strict"; 
+"use strict";
 
 angular.module("header")
-	.controller("headerController", function(sessionService){
-		var vm = this;  
+    .controller("headerController", function(sessionService, $state, $scope, $rootScope) {
+        var vm = this;
+        vm.logout = function() {
+            sessionService.destroyAdminSession();
+            vm.isAdmin = false
+            $rootScope.$broadcast('loggedOut', {})
+        }
 
-		vm.isAdmin = sessionService.isAdmin(); 
-		vm.session = sessionService.getAdminSession(); 
-		vm.logout = sessionService.destroyAdminSession(); 
+        $scope.$on("loggedIn", function(event) {
+            vm.isAdmin = sessionService.isAdmin();
+            vm.session = sessionService.getAdminSession();
 
-	})
+        })
+
+    })
