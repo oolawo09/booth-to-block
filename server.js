@@ -1,20 +1,25 @@
-var express = require('express');
 var jwt = require('express-jwt');
+var tokenManager = require('./api/config/token_manager');
+var secret = require('./api/config/secret');
+var express = require('express');
 var bodyParser = require('body-parser'); //bodyparser + json + urlencoder
 var morgan  = require('morgan'); // logger
-var tokenManager = require('./config/token_manager');
-var secret = require('./config/secret');
 
 var app = express();
-app.listen(3001);
-app.use(bodyParser());
-app.use(morgan());
+
+//setting up frontend to serve 
+app.use(express.static(__dirname + "/app"));
+
+//setting up API to serve
 
 //Routes
 var routes = {};
-routes.posts = require('./route/posts.js');
-routes.users = require('./route/users.js');
-routes.rss = require('./route/rss.js');
+routes.posts = require('./api/route/posts.js');
+routes.users = require('./api/route/users.js');
+routes.rss = require('./api/route/rss.js');
+
+app.use(bodyParser());
+app.use(morgan());
 
 app.all('*', function(req, res, next) {
   res.set('Access-Control-Allow-Origin', 'http://localhost:8000');
@@ -68,4 +73,7 @@ app.get('/user/logout', routes.users.logout);
 //Serve the rss feed
 app.get('/rss', routes.rss.index);
 
-console.log('Blog API is starting on port 3001');
+
+app.listen(3002);
+
+console.log('Blog API is starting on port 3002');
