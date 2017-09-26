@@ -74,7 +74,5 @@ app.get('/user/logout', routes.users.logout);
 app.get('/rss', routes.rss.index);
 
 
-app.listen(process.env.PORT || 3000, function(){
-  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+app.listen(process.env.PORT || 3000);
 
