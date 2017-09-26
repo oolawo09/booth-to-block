@@ -1,4 +1,4 @@
-var Feed    = require('feed');
+var Feed    = require('../../node_modules/feed');
 var config  = require('../config/config.js');
 var db      = require('../config/mongo_database.js');
 
