@@ -1,6 +1,6 @@
 var config = {};
 
-config.url = 'http://localhost/';
+config.url = 'http://localhost:3002/';
 
 config.rss = {
   title:        'Block-to-booth RSS Feed',
