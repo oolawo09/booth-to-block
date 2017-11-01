@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 var SALT_WORK_FACTOR = 10;
 var mongodbURL = process.env.MONGODB_URI;
+console.log("mongodbUrl: ",mongodbURL)
 var mongodbOptions = { };
 
 mongoose.connect(mongodbURL, mongodbOptions, function (err, res) {
